@@ -29,6 +29,8 @@ team_games["location"] = np.where(
     team_games["homeTeam"] == team, "Home", "Away"
 )
 
+team_games["result"] = np.where(team_games["margin"] > 0, "Win", "Loss")
+
 st.dataframe(team_games)
 
 st.subheader("Home vs. Away Breakdown")
