@@ -26,7 +26,7 @@ team_games = df[
 ].copy()
 
 team_games["location"] = np.where(
-    team_games["homeTeam"] == selected_team, "Home", "Away"
+    team_games["homeTeam"] == team, "Home", "Away"
 )
 
 st.dataframe(team_games)
