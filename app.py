@@ -24,6 +24,14 @@ team_games = df[
     (df["awayTeam"] == team)
 ]
 
+team_games = df[
+    (df["homeTeam"] == selected_team) | (df["awayTeam"] == selected_team)
+].copy()
+
+team_games["location"] = np.where(
+    team_games["homeTeam"] == selected_team, "Home", "Away"
+)
+
 st.dataframe(team_games)
 
 st.subheader("Home vs. Away Breakdown")
