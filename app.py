@@ -26,17 +26,17 @@ team_games = df[
 ].copy()
 
 team_games["team_score"] = np.where(
-    team_games["homeTeam"] == selected_team,
+    team_games["homeTeam"] == team,
     team_games["homePoints"],
     team_games["awayPoints"],
 )
 team_games["opp_score"] = np.where(
-    team_games["homeTeam"] == selected_team,
+    team_games["homeTeam"] == team,
     team_games["awayPoints"],
     team_games["homePoints"],
 )
 team_games["opponent"] = np.where(
-    team_games["homeTeam"] == selected_team,
+    team_games["homeTeam"] == team,
     team_games["awayTeam"],
     team_games["homeTeam"],
 )
