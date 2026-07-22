@@ -19,13 +19,9 @@ team = st.selectbox(
 
 st.write(f"Selected Team: {team}")
 
-team_games = df[
-    (df["homeTeam"] == team) |
-    (df["awayTeam"] == team)
-]
 
 team_games = df[
-    (df["homeTeam"] == selected_team) | (df["awayTeam"] == selected_team)
+    (df["homeTeam"] == team) | (df["awayTeam"] == team)
 ].copy()
 
 team_games["location"] = np.where(
