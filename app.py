@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import plotly as px
+import plotly.express as px
 import numpy as np
 
 st.title("Daniel's Michigan Football Analytics")
